@@ -17,8 +17,11 @@ def process_request():
         print("Оброблена заявка:", processed_request)
     else:
         print("Черга порожня")
-        
+
 # Головний цикл програми
-while True:
-    generate_request()  # Генерація нової заявки
-    process_request()   # Обробка заявок
+try:
+    while True:
+        generate_request()  # Генерація нової заявки
+        process_request()   # Обробка заявок
+except KeyboardInterrupt:
+    print("Програма завершена користувачем")
